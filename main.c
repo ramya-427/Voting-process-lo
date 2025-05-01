@@ -108,12 +108,6 @@ void displayResults() {
 
     if (winningCandidate != -1) {
         printf("\nWinner: %s with %d votes\n", candidateNames[winningCandidate], maxVotes);
-        printf("Members who voted for %s:\n", candidateNames[winningCandidate]);
-        for (int i = 0; i < MAX_VOTERS; i++) {
-            if (votersForCandidates[winningCandidate][i] != NULL) {
-                printf("%s\n", votersForCandidates[winningCandidate][i]);
-            }
-        }
     } else {
         printf("No winner yet.\n");
     }
@@ -181,7 +175,7 @@ int main() {
 
     enqueue(&votingQueue, createVoter("Neha", 1, 1));
     enqueue(&votingQueue, createVoter("Ramya", 2, 1));
-    enqueue(&votingQueue, createVoter("Harshi", 3, 0));
+    enqueue(&votingQueue, createVoter("Harshi", 3, 1));
 
     int choice;
     do {
